@@ -1,11 +1,36 @@
-export default function SideBar() {
-    return (
+import "./SideBar.css";
+import React, { Component, useState } from 'react'
+import { MenuItem, Menu } from 'semantic-ui-react'
 
-        <nav>
-            <a href="">Vegetables</a>| <br></br>
-            <a href="">Fruits</a> |<br></br>
-            <a href="">Meat</a> |<br></br>
-            <a href="">Dairy</a>
-        </nav>
+
+export default function SideBar({handleSelectProduct}) {
+    const [activeItem, setActiveItem] = useState("")
+
+  const handleItemClick = (e, { name }) => setActiveItem(name)
+
+    return (
+      <Menu pointing vertical>
+        <MenuItem
+          name='vegetables'
+          active={activeItem === 'vegetables'}
+          onClick={handleItemClick}
+        />
+        <MenuItem
+          name='Fruits'
+          active={activeItem === 'Fruits'}
+          onClick={handleItemClick}
+        />
+        <MenuItem
+          name='Meat'
+          active={activeItem === 'Meat'}
+          onClick={handleItemClick}
+        />
+        <MenuItem
+          name='Dairy'
+          active={activeItem === 'Dairy'}
+          onClick={handleItemClick}
+        />
+      </Menu>
     )
+  
 }
