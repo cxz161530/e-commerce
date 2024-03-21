@@ -24,6 +24,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Product />} />
+      {/* <Route path="/cart" element={<Cart />} /> */}
       <Route path="/login" element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin}/>} />
       <Route path='/signup' element={<SignUpPage handleSignUpOrLogin={handleSignUpOrLogin}/>} />
  

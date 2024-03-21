@@ -4,9 +4,9 @@ import { MenuItem, Menu } from 'semantic-ui-react'
 
 
 export default function SideBar({handleSelectProduct}) {
-    const [activeItem, setActiveItem] = useState("")
+  const [activeItem, setActiveItem] = useState("")
 
-  const handleItemClick = (e, { name }) => setActiveItem(name)
+  const handleItemClick = (e, { name }) => handleSelectProduct(name)
 
     return (
       <Menu pointing vertical>
@@ -16,17 +16,17 @@ export default function SideBar({handleSelectProduct}) {
           onClick={handleItemClick}
         />
         <MenuItem
-          name='Fruits'
+          name='fruits'
           active={activeItem === 'Fruits'}
           onClick={handleItemClick}
         />
         <MenuItem
-          name='Meat'
+          name='meat'
           active={activeItem === 'Meat'}
           onClick={handleItemClick}
         />
         <MenuItem
-          name='Dairy'
+          name='dairy'
           active={activeItem === 'Dairy'}
           onClick={handleItemClick}
         />

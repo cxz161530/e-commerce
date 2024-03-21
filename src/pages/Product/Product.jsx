@@ -6,32 +6,52 @@ import SideBar from '../../components/SideBar/SideBar';
 import ProductDisplay from '../../components/ProductDisplay/ProductDisplay';
 
 
-
 export default function Product() {
+    //products is an array of all products that we fetched from the sever
     const [products, setProducts] = useState([]);
-    const [selectProducts, setSelectProducts] = useState([]);
+    //selectedCategory is a string that gets filled when we click on a 
+    //button in the side bar
+    const [selectedCategory, setSelectedCategory] = useState("");
+    console.log(products)
+    //here filter the data(filtering the array by category)
+    const selectedProducts = selectedCategory ? products.filter((p)=>{return p.category === selectedCategory}) : products
+    //a constant will get redeclared everytime the component renders
+    //if ther is a selectedCategory, we filter the products in state, 
+    //so that we only display the products with that category
+    //if ther is not a selected category, display all the products
 
-    async function handleSelectProduct(selectedCategory){
-        console.log(selectedCategory, "selected category from sidbar")
+    console.log(selectedProducts)
 
+    async function handleSelectProduct(category){
+        console.log(category, "selected category from sidbar")
+        setSelectedCategory(category)
+
+
+        
+    }
+
+    async function addProduct(productId){
         try {
-            const response = await fetch('api/products',{
-                method: 'GET',
-                body: selectedCategory,
+            const response = await fetch('/api/carts', {
+                method: 'POST',
                 headers: {
-                    Authorization: "Bearer " + tokenService.getToken()
+                  'Content-Type': 'application/json',
+                  
+                  Authorization: "Bearer " + tokenService.getToken()
+                },
+                body: JSON.stringify({productId: productId})
+              })
+              
+              const data = await response.json()
+              
+              console.log(data)
 
-                }
-
-            })
-
-            const data = await response.json();
-            console.log(data)
-            setProducts([data.Product, ...products])   
-        } catch(err){
-            console.log(err.message)
-            console.log('CHECK YOU SERVER TERMINAL!!!')
+        } catch (err){
+            console.log(err)
         }
+        
+
+
     }
 
 
@@ -74,7 +94,7 @@ export default function Product() {
                 </Grid.Column>
 
                 <Grid.Column width={8}>
-                    <ProductDisplay products={products} />
+                    <ProductDisplay products={selectedProducts} addProduct={addProduct} />
                 </Grid.Column>
             </Grid.Row>
         </Grid>

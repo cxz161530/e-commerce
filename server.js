@@ -10,6 +10,7 @@ require("./config/database");
 
 const app = express();
 
+const cartsRouter = require('./routes/api/carts')
 const userRouter = require("./routes/api/users")
 const postRouter = require('./routes/api/posts')
 const productRouter = require('./routes/api/products')
@@ -30,6 +31,7 @@ app.use(require("./config/auth"));
 app.use("/api/users", userRouter);
 app.use('/api/posts', postRouter);
 app.use('/api/products', productRouter);
+app.use('/api/carts', cartsRouter)
 
 // "catch all" route
 app.get('/*', function(req, res) {

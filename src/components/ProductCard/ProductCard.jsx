@@ -9,22 +9,16 @@ import {
     Image,
     Button
 } from 'semantic-ui-react'
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, addProduct}) {
     console.log(product.amount)
+
+    async function handleClick(){
+        addProduct(product._id)
+
+    }
+
+
     return (
-
-        // <article>
-        //     <div  >
-        //         <img src={product.photoUrl}></img>
-        //     </div>
-        //     <header>
-        //         <h3>{product.name}</h3>
-        //         <p>{product.amount}</p>
-        //         <p>{product.price}</p>
-        //         <p>{product.category}</p>
-        //     </header>
-
-        // </article>
 
         <Card>
             <Image src={product.photoUrl} wrapped ui={false} />
@@ -36,7 +30,7 @@ export default function ProductCard({ product }) {
                 </CardDescription>
             </CardContent>
             <CardContent extra>
-            <button class="ui button">Add Cart</button>
+            <button class="ui button" onClick={handleClick} >Add Cart</button>
             </CardContent>
         </Card>
 
