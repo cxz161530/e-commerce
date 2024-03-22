@@ -2,7 +2,7 @@ const CartModel = require('../models/cart');
 
 module.exports = {
     create,
-    deleteCart,
+    removeItemFromCart,
     show
 
 }
@@ -51,7 +51,18 @@ async function create(req, res) {
 
 
 
-async function deleteCart(req, res) {
+async function removeItemFromCart(req, res) {
+    try {
+       // const item = await post.findOne({"cart._id": req.params.cartId, "userName": req.user._id})
+       //find the cart by using the req.user._id
+       const cart = await CartModel.findOne({userId: req.user._id})
+       console.log(cart, "here is from cart info")
+       res.json({msg:"Delete OKay"})
+
+    } catch (err) {
+        res.status(400).json({err})
+
+    }
 
 
 }

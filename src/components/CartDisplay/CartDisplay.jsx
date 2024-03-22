@@ -5,14 +5,14 @@ import Item from '../../components/Item/Item'
 
 
 
-export default function CartDisplay({cartItems}){
+export default function CartDisplay({cartItems, removeItem}){
     return(
 
         <div>
            
                 {cartItems.map((cartItem)=>(
                      <CardGroup itemsPerRow={1} stackable={true}>
-                    <Item cartItem={cartItem} />
+                    <Item cartItem={cartItem} removeItem={removeItem} />
                     </CardGroup>
 
                 ))}

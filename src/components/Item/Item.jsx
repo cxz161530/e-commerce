@@ -11,7 +11,17 @@ import {
     Button
 } from 'semantic-ui-react'
 
-export default function Item({ cartItem }) {
+export default function Item({ cartItem, removeItem }) {
+
+    function handleOnClick(){
+        removeItem(cartItem)
+        console.log("Hello")
+
+
+
+    }
+
+
     return (
 
         <CardGroup itemsPerRow={1}>
@@ -29,10 +39,10 @@ export default function Item({ cartItem }) {
                 </CardContent>
                 <CardContent extra>
                     <div className='ui two buttons'>
-                        <Button basic color='green'>
+                        <Button basic color='green' onClick={handleOnClick}>
                             -
                         </Button>
-                        <Button basic color='green'>
+                        <Button basic color='green' onClick={handleOnClick}>
                             +
                         </Button>
                     </div>
