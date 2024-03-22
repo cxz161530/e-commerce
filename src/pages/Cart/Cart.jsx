@@ -50,11 +50,36 @@ export default function Cart(){
 
             const data = await response.json()
             console.log(data, 'response from cancel item')
-            //getCart();
+            getCart();
 
         } catch(err){
             console.log(err)
         }
+
+
+    }
+
+    async function addProduct(productId){
+        try {
+            const response = await fetch('/api/carts', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  
+                  Authorization: "Bearer " + tokenService.getToken()
+                },
+                body: JSON.stringify({productId: productId})
+              })
+              
+              const data = await response.json()
+              getCart()
+              
+              console.log(data)
+
+        } catch (err){
+            console.log(err)
+        }
+        
 
 
     }
@@ -65,7 +90,7 @@ export default function Cart(){
     return (
         <div>
             <Header />
-            <CartDisplay cartItems={cartItems} removeItem={removeItem}/>
+            <CartDisplay cartItems={cartItems} removeItem={removeItem} addProduct={addProduct}/>
         </div>
         
     )

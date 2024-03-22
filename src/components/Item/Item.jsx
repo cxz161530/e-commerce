@@ -11,16 +11,19 @@ import {
     Button
 } from 'semantic-ui-react'
 
-export default function Item({ cartItem, removeItem }) {
+export default function Item({ cartItem, removeItem, addProduct}) {
+    console.log(cartItem, "here is cartItem")
 
     function handleOnClick(){
-        removeItem(cartItem)
+        removeItem(cartItem._id)
         console.log("Hello")
-
-
-
     }
 
+    function handleOnClickAdd(){
+        addProduct(cartItem._id)
+        console.log("add is working")
+
+    }
 
     return (
 
@@ -30,11 +33,14 @@ export default function Item({ cartItem, removeItem }) {
                     <Image
                         floated='right'
                         size='mini'
-                        src={cartItem.productId.photoUrl} />
+                        src={cartItem.productId?.photoUrl} />
                     <CardHeader>{cartItem.productId.name}</CardHeader>
                     <CardMeta>{cartItem.productId.amount}</CardMeta>
                     <CardDescription>
                         ${cartItem.productId.price}
+                    </CardDescription>
+                    <CardDescription floated='left'>
+                    quantities: {cartItem.quantity}
                     </CardDescription>
                 </CardContent>
                 <CardContent extra>
@@ -42,7 +48,7 @@ export default function Item({ cartItem, removeItem }) {
                         <Button basic color='green' onClick={handleOnClick}>
                             -
                         </Button>
-                        <Button basic color='green' onClick={handleOnClick}>
+                        <Button basic color='green' onClick={handleOnClickAdd}>
                             +
                         </Button>
                     </div>
