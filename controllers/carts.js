@@ -2,7 +2,8 @@ const CartModel = require('../models/cart');
 
 module.exports = {
     create,
-    deleteCart
+    deleteCart,
+    show
 
 }
 
@@ -27,7 +28,8 @@ async function create(req, res) {
                 await cart.save()
             }
 
-            res.json({ data: "item added to cart" })
+            return res.json({ data: "item added to cart" })
+            console.log(data)
         } else {
             // create new Cart with data from token, and form 
             const newCart = {
@@ -36,7 +38,7 @@ async function create(req, res) {
                 products: [{ productId: req.body.productId, quantity: 1 }]
             }
             cart = await CartModel.create(newCart)
-            res.json({ data: "item added to Cart" })
+            return res.json({ data: "item added to Cart" })
         }
 
 
@@ -53,3 +55,16 @@ async function deleteCart(req, res) {
 
 
 }
+
+async function show(req, res){
+    try {
+      // find the cart by the userId property on the CartModel
+      // req.user comes from the jwt token sent from the react side
+      const cart = await CartModel.findOne({userId: req.user._id}).populate("products.productId").exec()
+    
+      res.json({cart})
+    } catch(err){
+      console.log(err);
+      res.json({err});
+    }
+   }

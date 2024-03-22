@@ -5,6 +5,9 @@ export default function PageHeader() {
   return (
     <Segment clearing>
       <Header as="h2" floated="right" color="green">
+        <Link to="cart">
+        <i class="fa badge fa-lg" value={8}>&#xf07a;</i>
+        </Link>
         <Link to="" >
           Logout
         </Link>

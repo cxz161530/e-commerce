@@ -1,18 +1,21 @@
 import { Route, Routes } from "react-router-dom";
 import { useState } from 'react'
 import "./App.css";
-
 import SignUpPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 // ANY component that is rendered by a route, should be stored in the 
 // pages folder. Every page is like an app component
 import userService from "./utils/userService";
 import Product from "./pages/Product/Product";
+import Cart from "./pages/Cart/Cart";
+import Header from "./components/Header/Header"
 
 function App() {
   // the userService.getUser() when the page loads it goes into localstorage and looks for a jwt
   // token, decodes and sets it in state
   const [user, setUser] = useState(userService.getUser())
+
+  const [cart, setCart] = useState([]);
 
   function handleSignUpOrLogin(){
     // we call this function after userService.login(), or userService.signup()
@@ -24,7 +27,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Product />} />
-      {/* <Route path="/cart" element={<Cart />} /> */}
+      <Route path="/cart" element={<Cart />} />
       <Route path="/login" element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin}/>} />
       <Route path='/signup' element={<SignUpPage handleSignUpOrLogin={handleSignUpOrLogin}/>} />
  
