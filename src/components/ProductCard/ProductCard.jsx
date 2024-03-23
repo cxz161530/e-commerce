@@ -30,7 +30,7 @@ export default function ProductCard({ product, addProduct}) {
                 </CardDescription>
             </CardContent>
             <CardContent extra>
-            <button class="ui button" onClick={handleClick} >Add Cart</button>
+            <Button class="ui button" color="green" onClick={handleClick} >Add Cart</Button>
             </CardContent>
         </Card>
 

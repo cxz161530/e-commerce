@@ -8,25 +8,26 @@ import {
     Card,
     Icon,
     Image,
-    Button
+    Button,
+    ButtonGroup
 } from 'semantic-ui-react'
 
-export default function Item({ cartItem, removeItem, addProduct}) {
+export default function Item({ cartItem, removeItem, addProduct }) {
     console.log(cartItem, "here is cartItem")
 
-    function handleOnClick(){
+    function handleOnClick() {
         removeItem(cartItem._id)
         console.log("Hello")
     }
 
-    function handleOnClickAdd(){
+    function handleOnClickAdd() {
         addProduct(cartItem._id)
         console.log("add is working")
 
     }
 
     return (
-
+        <>
         <CardGroup itemsPerRow={1}>
             <Card>
                 <CardContent>
@@ -40,16 +41,16 @@ export default function Item({ cartItem, removeItem, addProduct}) {
                         ${cartItem.productId.price}
                     </CardDescription>
                     <CardDescription >
-                    Qty: {cartItem.quantity}
+                        Qty: {cartItem.quantity}
                     </CardDescription>
                     <CardDescription >
-                    total price: {cartItem.quantity} * {cartItem.productId.price}
+                        total price: {cartItem.quantity} * {cartItem.productId.price}
                     </CardDescription>
                 </CardContent>
                 <CardContent extra>
                     <div className='ui two buttons'>
                         <Button basic color='green' onClick={handleOnClick}>
-                            -
+                            −
                         </Button>
                         <Button basic color='green' onClick={handleOnClickAdd}>
                             +
@@ -57,8 +58,9 @@ export default function Item({ cartItem, removeItem, addProduct}) {
                     </div>
                 </CardContent>
             </Card>
-
         </CardGroup >
+        </>
+
 
 
 

@@ -81,7 +81,7 @@ export default function LoginPage({ handleSignUpOrLogin }) {
             </Button>
           </Segment>
           <Message >
-            New to Us ? <Link to="/signup" ><span className="wordColor"> Sign up</span></Link>
+            New to us ? <Link to="/signup" ><span className="wordColor"> Sign up</span></Link>
           </Message>
           {error ? <ErrorMessage error={error} /> : null}
         </Form>

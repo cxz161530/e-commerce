@@ -4,6 +4,7 @@ import tokenService from "../../utils/tokenService"
 import { Card } from 'semantic-ui-react'
 import CartDisplay from '../../components/CartDisplay/CartDisplay'
 import Header from "../../components/Header/Header"
+import Checkout from "../../components/Checkout/Checkout"
 
 export default function Cart(){
     
@@ -91,6 +92,8 @@ export default function Cart(){
         <div>
             <Header />
             <CartDisplay cartItems={cartItems} removeItem={removeItem} addProduct={addProduct}/>
+            <Checkout />
+            
         </div>
         
     )
