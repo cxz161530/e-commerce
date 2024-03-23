@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from "react"
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
 import {
@@ -9,6 +10,7 @@ import {
 	Image,
 	Segment,
   } from "semantic-ui-react";
+import "./SignUpPage.css"
 
 // this hook allows us to navigate programatically
 import { useNavigate } from 'react-router-dom'
@@ -81,9 +83,9 @@ export default function SignUpPage({handleSignUpOrLogin}) {
 
   return (
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
-      <Grid.Column style={{ maxWidth: 450 }}>
+      <Grid.Column style={{ maxWidth: 550 }}>
         <Header as="h2" color="green" textAlign="center">
-          <Image src="https://i.imgur.com/0d3Uu6d.png" size='large' /> Sign Up
+          <Image src="https://i.imgur.com/0d3Uu6d.png" style={{width: '160px', height: 'auto'}} /> 
         </Header>
         <Form autoComplete="off" onSubmit={handleSubmit}>
           <Segment stacked>
@@ -118,8 +120,8 @@ export default function SignUpPage({handleSignUpOrLogin}) {
               onChange={handleChange}
               required
             />
-            <Button type="submit" className="btn">
-              Signup
+            <Button type="submit"  className="btn" color="green">
+              Sign up
             </Button>
           </Segment>
           {error ? <ErrorMessage error={error} /> : null}

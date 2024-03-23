@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     CardMeta,
     CardHeader,
@@ -35,12 +35,15 @@ export default function Item({ cartItem, removeItem, addProduct}) {
                         size='mini'
                         src={cartItem.productId?.photoUrl} />
                     <CardHeader>{cartItem.productId.name}</CardHeader>
-                    <CardMeta>{cartItem.productId.amount}</CardMeta>
+                    <CardMeta>{cartItem.productId.amount} x {cartItem.quantity}</CardMeta>
                     <CardDescription>
                         ${cartItem.productId.price}
                     </CardDescription>
-                    <CardDescription floated='left'>
-                    quantities: {cartItem.quantity}
+                    <CardDescription >
+                    Qty: {cartItem.quantity}
+                    </CardDescription>
+                    <CardDescription >
+                    total price: {cartItem.quantity} * {cartItem.productId.price}
                     </CardDescription>
                 </CardContent>
                 <CardContent extra>

@@ -53,9 +53,9 @@ export default function LoginPage({ handleSignUpOrLogin }) {
 
   return (
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
-      <Grid.Column style={{ maxWidth: 450 }}>
+      <Grid.Column style={{ maxWidth: 550 }}>
         <Header as="h2" color="green" textAlign="center">
-          <Image src="https://i.imgur.com/0d3Uu6d.png" /> Login
+          <Image src="https://i.imgur.com/0d3Uu6d.png" style={{width: '160px', height: 'auto'}}  /> 
         </Header>
         <Form autoComplete="off" onSubmit={handleSubmit}>
           <Segment stacked>
@@ -76,12 +76,12 @@ export default function LoginPage({ handleSignUpOrLogin }) {
               required
             />
 
-            <Button type="submit" className="btn">
-              Login
+            <Button type="submit" className="btn" color="green">
+              Log in
             </Button>
           </Segment>
-          <Message>
-            New to Us? <Link to="/signup">Sign up</Link>
+          <Message >
+            New to Us ? <Link to="/signup" ><span className="wordColor"> Sign up</span></Link>
           </Message>
           {error ? <ErrorMessage error={error} /> : null}
         </Form>
