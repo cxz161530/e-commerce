@@ -8,7 +8,7 @@ import Item from '../../components/Item/Item'
 export default function CartDisplay({cartItems, removeItem, addProduct}){
     return(
 
-        <div>
+        <div >
            
                 {cartItems.map((cartItem)=>(
                      <CardGroup itemsPerRow={1} stackable={true}>

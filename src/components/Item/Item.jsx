@@ -16,7 +16,6 @@ export default function Item({ cartItem, removeItem, addProduct }) {
     
     console.log(cartItem, "here is cartItem")
 
-
     function handleOnClick() {
         removeItem(cartItem._id)
         console.log("Hello")
@@ -30,7 +29,7 @@ export default function Item({ cartItem, removeItem, addProduct }) {
 
     return (
         <>
-        <CardGroup itemsPerRow={1}>
+        <CardGroup itemsPerRow={1} style={{width:"100%"}}>
             <Card>
                 <CardContent>
                     <Image
@@ -38,15 +37,12 @@ export default function Item({ cartItem, removeItem, addProduct }) {
                         size='mini'
                         src={cartItem.productId?.photoUrl} />
                     <CardHeader>{cartItem.productId.name}</CardHeader>
-                    <CardMeta>{cartItem.productId.amount} x {cartItem.quantity}</CardMeta>
+                    <CardMeta >{cartItem.productId.amount} x {cartItem.quantity}</CardMeta>
                     <CardDescription>
                         ${cartItem.productId.price}
                     </CardDescription>
-                    <CardDescription >
+                    <CardDescription>
                         Qty: {cartItem.quantity}
-                    </CardDescription>
-                    <CardDescription >
-                        total price: {cartItem.quantity} * {cartItem.productId.price}
                     </CardDescription>
                 </CardContent>
                 <CardContent extra>

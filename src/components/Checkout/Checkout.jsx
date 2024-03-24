@@ -11,15 +11,15 @@ import {
     ButtonGroup
 } from 'semantic-ui-react'
 
-export default function Checkout(){
+export default function Checkout({total}){
     return (
         
-                    <div className='ui two buttons'>
+                    <div className='ui two buttons' style={{marginTop: "48px"}}>
                         <Button  color='green' >
                             Checkout
                         </Button>
                         <Button  color='green' >
-                            $260
+                            ${total.toFixed(2)}
                         </Button>
                     </div>
                 

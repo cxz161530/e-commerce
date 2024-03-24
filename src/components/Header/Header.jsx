@@ -8,7 +8,7 @@ export default function PageHeader(props) {
   
   return (
     <Segment clearing>
-      <Header as="h2" floated="right">
+      <Header as="h2" floated="right" style={{marginTop: "30px"}}>
         <Link to="cart">
         <i class="fa badge fa-lg"  value={itemCount}>&#xf07a;</i>
     

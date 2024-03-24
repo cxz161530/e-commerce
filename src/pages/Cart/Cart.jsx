@@ -8,10 +8,16 @@ import './Cart.css'
 
 
 export default function Cart({loggedUser, handleLogout, cartItems, setCartItems}){
+    console.log(cartItems)
     
     //here we set all the products in the cartItems state
     //cartItems means an array of items in one cart
     //const [cartItems, setCartItems] = useState([]);
+    const total = cartItems.reduce((acc, item)=>{
+        const price = Number(item.productId.price) * item.quantity
+        return acc + price
+
+    },0)
 
     //C(R)UD
     async function getCart(){
@@ -92,8 +98,12 @@ export default function Cart({loggedUser, handleLogout, cartItems, setCartItems}
     return (
         <div className='cart-container'>
             <Header loggedUser={loggedUser} handleLogout={handleLogout} itemCount={cartItems.length}/>
+            <div style={{maxWidth: "800px"}}>
+
             <CartDisplay cartItems={cartItems} removeItem={removeItem} addProduct={addProduct}/>
-            <Checkout />
+            <Checkout total={total} />
+            </div>
+            
             
         </div>
         

@@ -29,7 +29,7 @@ export default function ProductCard({ product, addProduct}) {
                     ${product.price}
                 </CardDescription>
             </CardContent>
-            <CardContent extra>
+            <CardContent extra style={{marginLeft: "20px"}}>
             <Button class="ui button" color="green" onClick={handleClick} >Add Cart</Button>
             </CardContent>
         </Card>
