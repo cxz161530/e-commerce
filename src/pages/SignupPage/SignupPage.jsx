@@ -85,7 +85,7 @@ export default function SignUpPage({handleSignUpOrLogin}) {
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 550 }}>
         <Header as="h2" color="green" textAlign="center">
-          <Image src="https://i.imgur.com/0d3Uu6d.png" style={{width: '160px', height: 'auto'}} /> 
+          <Image src="https://i.imgur.com/0d3Uu6d.png" style={{width: '190px', height: 'auto'}} /> 
         </Header>
         <Form autoComplete="off" onSubmit={handleSubmit}>
           <Segment stacked>

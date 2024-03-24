@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react'
-
 import tokenService from "../../utils/tokenService"
 import { Card } from 'semantic-ui-react'
 import CartDisplay from '../../components/CartDisplay/CartDisplay'
 import Header from "../../components/Header/Header"
 import Checkout from "../../components/Checkout/Checkout"
+import './Cart.css'
 
-export default function Cart(){
+
+export default function Cart({loggedUser, handleLogout, cartItems, setCartItems}){
     
     //here we set all the products in the cartItems state
     //cartItems means an array of items in one cart
-    const [cartItems, setCartItems] = useState([]);
+    //const [cartItems, setCartItems] = useState([]);
 
     //C(R)UD
     async function getCart(){
@@ -89,8 +90,8 @@ export default function Cart(){
         getCart();
     }, []);
     return (
-        <div>
-            <Header />
+        <div className='cart-container'>
+            <Header loggedUser={loggedUser} handleLogout={handleLogout} itemCount={cartItems.length}/>
             <CartDisplay cartItems={cartItems} removeItem={removeItem} addProduct={addProduct}/>
             <Checkout />
             
@@ -98,3 +99,4 @@ export default function Cart(){
         
     )
 }
+

@@ -6,7 +6,7 @@ import SideBar from '../../components/SideBar/SideBar';
 import ProductDisplay from '../../components/ProductDisplay/ProductDisplay';
 
 
-export default function Product() {
+export default function Product({loggedUser, handleLogout, cartItems} ) {
     //products is an array of all products that we fetched from the sever
     const [products, setProducts] = useState([]);
     //selectedCategory is a string that gets filled when we click on a 
@@ -84,7 +84,7 @@ export default function Product() {
         <Grid >
             <Grid.Row>
                 <Grid.Column>
-                    <Header />
+                    <Header loggedUser={loggedUser} handleLogout={handleLogout} itemCount={cartItems.length} />
                 </Grid.Column>
             </Grid.Row>
 

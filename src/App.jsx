@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate} from "react-router-dom";
 import { useState } from 'react'
 import "./App.css";
 import SignUpPage from "./pages/SignupPage/SignupPage";
@@ -14,7 +14,7 @@ function App() {
   // the userService.getUser() when the page loads it goes into localstorage and looks for a jwt
   // token, decodes and sets it in state
   const [user, setUser] = useState(userService.getUser())
-
+  const [cartItems, setCartItems] = useState([]);
   const [cart, setCart] = useState([]);
 
   function handleSignUpOrLogin(){
@@ -23,11 +23,33 @@ function App() {
     setUser(userService.getUser())
   }
 
+  function logout() {
+    console.log("here is log out info");
+    userService.logout();
+    setUser(null);
+  }
+
+  if (!user) {
+    return (
+      <Routes>
+        <Route
+          path="/login"
+          element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+        />
+        <Route
+          path="/signup"
+          element={<SignUpPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+        />
+        <Route path="*" element={<Navigate to="/login" />} />
+      </Routes>
+    );
+  }
+
 
   return (
     <Routes>
-      <Route path="/" element={<Product />} />
-      <Route path="/cart" element={<Cart />} />
+      <Route path="/" element={<Product loggedUser={user} handleLogout={logout} cartItems={cartItems} setCartItems={setCartItems}  />} />
+      <Route path="/cart" element={<Cart loggedUser={user} handleLogout={logout} cartItems={cartItems} setCartItems={setCartItems}/>} />
       <Route path="/login" element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin}/>} />
       <Route path='/signup' element={<SignUpPage handleSignUpOrLogin={handleSignUpOrLogin}/>} />
  

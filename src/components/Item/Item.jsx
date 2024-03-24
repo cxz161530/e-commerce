@@ -13,7 +13,9 @@ import {
 } from 'semantic-ui-react'
 
 export default function Item({ cartItem, removeItem, addProduct }) {
+    
     console.log(cartItem, "here is cartItem")
+
 
     function handleOnClick() {
         removeItem(cartItem._id)
@@ -59,6 +61,7 @@ export default function Item({ cartItem, removeItem, addProduct }) {
                 </CardContent>
             </Card>
         </CardGroup >
+
         </>
 
 
