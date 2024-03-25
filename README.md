@@ -44,8 +44,22 @@ The app is configured, to use those respective key names for the database, jwt s
 
 WELCOME! This is a Grocery Online Shopping Site. 
 
+Link -> https://project3-shopping-site.onrender.com/signup
+
 Uses Express, React, Semantic UI React 3.0, MongoDB
 
 The object of the site is for people who want to order groceries online. Click the "Sign up" or "Log in" page to continue. 
 ![Site initial state](https://i.imgur.com/UrJOvL4.png)
 ![Site initial state](https://i.imgur.com/3WZbk2w.png)
+
+After log in, we can see the main product page. It shows all the products. ![Site initial state](https://i.imgur.com/rpIDK7y.png)
+
+If customers want to check different categories of products, customers can click the side bar to see different data
+![Site initial state](https://i.imgur.com/ZMCg9TD.png)
+![Site initial state](https://i.imgur.com/8SRpeOT.png)
+![Site initial state](https://i.imgur.com/mKgOjlh.png)
+![Site initial state](https://i.imgur.com/6i9VRUQ.png)
+
+If customers want to buy any items, they can click "Add Cart" button. After that , the customers can click the shopping cart icon to double check the how many items they have and how much they need to pay for. 
+The cart page can add more selected items and remove specifi item or the whole cart. https://i.imgur.com/2UvjcJS.png
+![Site initial state](https://i.imgur.com/2UvjcJS.png)
