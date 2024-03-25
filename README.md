@@ -55,7 +55,7 @@ The object of the site is for people who want to order groceries online. Click t
 After log in, we can see the main product page. It shows all the products. ![Site initial state](https://i.imgur.com/xhXtPvv.png)
 
 If customers want to check different categories of products, customers can click the sidebar to see different data
-![Site initial state](https://i.imgur.com/xhXtPvv.png)
+![Site initial state](https://i.imgur.com/F1UV3vT.png)
 ![Site initial state](https://i.imgur.com/Csk2XNE.png)
 ![Site initial state](https://i.imgur.com/Qw4MBzo.png)
 ![Site initial state](https://i.imgur.com/rAQ395u.png)
