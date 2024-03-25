@@ -46,4 +46,6 @@ WELCOME! This is a Grocery Online Shopping Site.
 
 Uses Express, React, Semantic UI React 3.0, MongoDB
 
-The object of the site is for people who want to order groceries online. Click the "Sign up" 
+The object of the site is for people who want to order groceries online. Click the "Sign up" or "Log in" page to continue. 
+![Site initial state](https://i.imgur.com/UrJOvL4.png)
+![Site initial state](https://i.imgur.com/3WZbk2w.png)
