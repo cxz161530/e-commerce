@@ -98,7 +98,7 @@ export default function Cart({loggedUser, handleLogout, cartItems, setCartItems}
     return (
         <div className='cart-container'>
             <Header loggedUser={loggedUser} handleLogout={handleLogout} itemCount={cartItems.length}/>
-            <div style={{maxWidth: "800px"}}>
+            <div style={{maxWidth: "100%"}}>
 
             <CartDisplay cartItems={cartItems} removeItem={removeItem} addProduct={addProduct}/>
             <Checkout total={total} />
