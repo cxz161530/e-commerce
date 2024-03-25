@@ -1,6 +1,8 @@
 import { Header, Segment, Image, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./Header.css"
+import React from 'react';
+
 
 export default function PageHeader(props) {
   console.log(props)
@@ -9,8 +11,8 @@ export default function PageHeader(props) {
   return (
     <Segment clearing>
       <Header as="h2" floated="right" style={{marginTop: "30px"}}>
-        <Link to="cart">
-        <i class="fa badge fa-lg"  value={itemCount}>&#xf07a;</i>
+        <Link to="cart" style={{color: "#007011"}}>
+        <i class="fa badge fa-lg" value={itemCount}>&#xf07a;</i>
     
         </Link>
         <Link to=""  onClick={handleLogout}>
