@@ -10,7 +10,7 @@ import {
 	Image,
 	Segment,
   } from "semantic-ui-react";
-import "./lily.css"
+import "./SignupPage.css"
 
 // this hook allows us to navigate programatically
 import { useNavigate } from 'react-router-dom'
