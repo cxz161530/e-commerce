@@ -52,14 +52,14 @@ The object of the site is for people who want to order groceries online. Click t
 ![Site initial state](https://i.imgur.com/UrJOvL4.png)
 ![Site initial state](https://i.imgur.com/3WZbk2w.png)
 
-After log in, we can see the main product page. It shows all the products. ![Site initial state](https://i.imgur.com/rpIDK7y.png)
+After log in, we can see the main product page. It shows all the products. ![Site initial state](https://i.imgur.com/xhXtPvv.png)
 
-If customers want to check different categories of products, customers can click the side bar to see different data
-![Site initial state](https://i.imgur.com/ZMCg9TD.png)
-![Site initial state](https://i.imgur.com/8SRpeOT.png)
-![Site initial state](https://i.imgur.com/mKgOjlh.png)
-![Site initial state](https://i.imgur.com/6i9VRUQ.png)
+If customers want to check different categories of products, customers can click the sidebar to see different data
+![Site initial state](https://i.imgur.com/xhXtPvv.png)
+![Site initial state](https://i.imgur.com/Csk2XNE.png)
+![Site initial state](https://i.imgur.com/Qw4MBzo.png)
+![Site initial state](https://i.imgur.com/rAQ395u.png)
 
 If customers want to buy any items, they can click "Add Cart" button. After that , the customers can click the shopping cart icon to double check the how many items they have and how much they need to pay for. 
-The cart page can add more selected items and remove specifi item or the whole cart. https://i.imgur.com/2UvjcJS.png
-![Site initial state](https://i.imgur.com/2UvjcJS.png)
+The cart page can add more selected items and remove specific item or the whole cart. 
+![Site initial state](https://i.imgur.com/TmXYijY.png)
