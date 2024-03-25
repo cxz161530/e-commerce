@@ -55,7 +55,7 @@ module.exports=[{
     "category": "fruits"
 },
 {
-    "photoUrl": "https://www.instacart.com/image-server/514x514/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_5d992eaf-b303-4f76-9cf5-7e2f8bb3c73b.jpg",
+    "photoUrl": "https://www.instacart.com/image-server/514x514/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_af51b2ac-1118-4206-afe7-a032970dd4c5.jpeg",
     "price": 8.70, 
     "name": "Lemons",
     "amount": "5 lbs",

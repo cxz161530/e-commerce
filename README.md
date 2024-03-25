@@ -40,3 +40,10 @@ S3_BUCKET=yourbucknamegoeshere
 ```
 
 The app is configured, to use those respective key names for the database, jwt secret and aws bucket, of course you'll have your own values
+
+
+WELCOME! This is a Grocery Online Shopping Site. 
+
+Uses Express, React, Semantic UI React 3.0, MongoDB
+
+The object of the site is for people who want to order groceries online. Click the "Sign up" 

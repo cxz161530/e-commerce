@@ -6,16 +6,16 @@ import React from 'react';
 
 export default function PageHeader(props) {
   console.log(props)
-  const {loggedUser, handleLogout, itemCount}=props
-  
+  const { loggedUser, handleLogout, itemCount } = props
+
   return (
     <Segment clearing>
-      <Header as="h2" floated="right" style={{marginTop: "30px"}}>
-        <Link to="cart" style={{color: "#007011"}}>
-        <i class="fa badge fa-lg" value={itemCount}>&#xf07a;</i>
-    
+      <Header as="h2" floated="right" style={{ marginTop: "30px" }}>
+        <Link to="cart" style={{ color: "#007011" }}>
+          <i class="fa badge fa-lg" value={itemCount}>&#xf07a;</i>
+
         </Link>
-        <Link to=""  onClick={handleLogout}>
+        <Link to="" onClick={handleLogout}>
           <span className="logoutColor">
             Log out
           </span>
@@ -25,7 +25,7 @@ export default function PageHeader(props) {
       <Header as="h2" floated="left">
         <Link to="">
           <Image
-            src="https://i.imgur.com/0d3Uu6d.png" style={{width: '150px', height: 'auto'}}
+            src="https://i.imgur.com/0d3Uu6d.png" style={{ width: '150px', height: 'auto' }}
           ></Image>
         </Link>
       </Header>
