@@ -25,9 +25,7 @@ export default function Product({loggedUser, handleLogout, cartItems} ) {
     async function handleSelectProduct(category){
         console.log(category, "selected category from sidbar")
         setSelectedCategory(category)
-
-
-        
+   
     }
 
     async function addProduct(productId){
