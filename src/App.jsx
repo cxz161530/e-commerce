@@ -9,7 +9,7 @@ import userService from "./utils/userService";
 import Product from "./pages/Product/Product";
 import Cart from "./pages/Cart/Cart";
 import Header from "./components/Header/Header"
-
+import FeedPage from "./pages/FeedPage/FeedPage";
 function App() {
   // the userService.getUser() when the page loads it goes into localstorage and looks for a jwt
   // token, decodes and sets it in state
@@ -52,6 +52,7 @@ function App() {
       <Route path="/cart" element={<Cart loggedUser={user} handleLogout={logout} cartItems={cartItems} setCartItems={setCartItems}/>} />
       <Route path="/login" element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin}/>} />
       <Route path='/signup' element={<SignUpPage handleSignUpOrLogin={handleSignUpOrLogin}/>} />
+      <Route path="/FeedPage" element={<FeedPage/>} />  
  
     </Routes>
   );

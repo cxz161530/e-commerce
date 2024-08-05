@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const productSchema = new Schema({
     category: String,
     name: String,
-    price: String,
-    amount: String,
+    price: Number,
+    amount: Number,
     photoUrl: String,
 
 
